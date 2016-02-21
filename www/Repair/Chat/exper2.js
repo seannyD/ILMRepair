@@ -16,9 +16,18 @@ var sliderExperiment = false;  // if true, runs sound slider experiment.  If fal
 var OIRExperiment = true;   // whether this is part of the repair experiment (these participants may not be allowed to use repair)
 // var allowRepairInThisExperiment = true; // set in index.php (whether users have the option of repairing)
 var allowRepairInThisRound = true;
+var maxNumberOfRepairRoundsPerStim = 1;
+var numberOfRepairRounds = 0; //current count of repair rounds for this stim
+
 var noiseType = "bunched"; // "none", "bunched", "spread"
-var noiseParams = [3,5,0.5]; // min, max noise characters, porb of noise occuring
+//var noiseParams = [3,5,0.5]; // min, max noise characters, porb of noise occuring
+var noiseParams = [3,5,1.0]; // min, max noise characters, porb of noise occuring
 var noiseChar = "#";
+
+var differentNoiseProbAfterFirstRepair = true;
+var noiseParamsAfterFirstRepair = [0,0,0];
+
+
 
 var noiseLevelThisRound = 0;
 
@@ -38,7 +47,7 @@ var click_to_continue_text = "Continue";
 var wait_for_partner_text = "Waiting for partner ...";
 var end_of_experiment_text = "You have finished the test!";
 var signal_too_short_text = "Dat was iets te kort. Probeer nog eens!";
-var experiment_intro_text = "Click here to begin"; 
+var experiment_intro_text = "Click here to begin";
 var training_text = "Pay attention!";
 var break_text = "Take a rest and get ready to communicate with your partner!";
 
@@ -72,7 +81,7 @@ var numberOfContextItems = 6;
 
 var roleSpeaker = [name,toUser].sort()[0]==name;
 console.log("RoleSpeaker");
-console.log(roleSpeaker); 
+console.log(roleSpeaker);
 var currentTarget = 0; // index of ims
 var currentSentWord = "";
 var currentTrainingStimName = "";
@@ -144,7 +153,7 @@ var score = 0;
 var sentWhistle = "";
 
 
-//loadData();  
+//loadData();
 
 if(roleSpeaker){
 
@@ -227,34 +236,34 @@ function startExperiment(){
 		hideMe("instructions");
 		hideMe("NextInst");
 		hideMe("PrevInst");
-		
+
 		hideMe("dictionaryPanel");
 		if(dictionaryExperiment){
 			showMe("dictionaryPanel");
 			showMe("instructions");
 			document.getElementById("instructions").innerHTML = dictionary_instruction_text;
 		}
-		
+
 		if(!writtenPartDetails){
 			writeParticipantDetails();
 			writtenPartDetails = true;
 		}
-		
 
-		
+
+
 		setBackground("");
 		clearScreen();
 		document.getElementById("InfoPanel").innerHTML = wait_for_partner_text;
 		setInnerHTML("InfoPanel",wait_for_partner_text);
 		setBackground("images/backgrounds/SW_Listener1.png");
 		chat.send("READYTOSTART", name, toUser);	// picked up by readyToStart();
-		
+
 		// TODO set infotext to "waiting"
-		
+
 		// link button for playing partner's signal
 //		document.getElementById("PlayPartnerSignal").addEventListener("touchend",playPartnerSignal());
 //		document.getElementById("PlayPartnerSignal").addEventListener("onclick",playPartnerSignal());
-		
+
 	}
 }
 
@@ -269,7 +278,7 @@ function setStim(stimWindow,im){
 
 // TODO
 // iPhone browser displays 'empty image' box when there's no image, so change inner HTML or display property
-	
+
 	if(im=="none"){
 		setImageInWindow(stimWindow,"")
 		hideMe(stimWindow);
@@ -346,43 +355,43 @@ function containsObject(obj, list) {
 function trainingRound(im,stimName){
 	console.log("Training Round");
 	hideMe("scorePanel");
-	currentlyTraining = true;	
-	
+	currentlyTraining = true;
+
 	currentTrainingStimName = stimName;
 
-	
+
 	//setBackground("images/backgrounds/Training.jpg");
 	// SW
-	
+
 	if(OIRExperiment){
 		showMe("TrainingBackground");
 	}
 	else{
 	setBackground("images/backgrounds/SW_Training.png");
 	}
-	
+
 	// will need to change to accept number
 	currentTarget = im;
-	
+
 	hideMe("typedInput");
 	hideMe("scorePanel");
 	hideMe("SlideWhistle");
 	hideMe("cont");
-	
+
 	showMe("InfoPanel");
 	document.getElementById("InfoPanel").innerHTML = training_text;
 	setInnerHTML("InfoPanel",training_text);
-	
+
 	if(!sliderExperiment){
 		showMe("middleStim");
 	}
 	showMe("leftStim");
 	showMe("leftStimImage");
-	
+
 	// display stimulus
 	setStim("leftStimImage",currentTarget);
 	// display label
-	
+
 	if(sliderExperiment){
 		window.setTimeout(function(){
 		// load meaing
@@ -395,17 +404,17 @@ function trainingRound(im,stimName){
  	else{
  		window.setTimeout(function(){
  			training_showWord();
- 		},1000);	
+ 		},1000);
  	}
 
-	
+
 	if(! sliderExperiment){
 		// clear image and message
 		window.setTimeout(function(){
 			setStim("leftStim","none"); ///
 			document.getElementById("middleStim").innerHTML = "";
-			},6000);	
-		
+			},6000);
+
 		// next round
 		window.setTimeout(function(){nextRound();},9000);
 	}
@@ -415,10 +424,10 @@ function training_showWord(){
 	if(currentTarget<0){
 	// practice words
 		var practiceWord = practiceLabels[-currentTarget-1];
-		document.getElementById("middleStim").innerHTML = practiceWord ; 
+		document.getElementById("middleStim").innerHTML = practiceWord ;
 	}
 	else{
-		document.getElementById("middleStim").innerHTML = currentTrainingStimName; 
+		document.getElementById("middleStim").innerHTML = currentTrainingStimName;
 	}
 }
 
@@ -429,10 +438,10 @@ function training_PlaybackEnds(){
 			if(sliderExperiment){
 				stopSlideWhistle();
 				}
-			setStim("leftStim","none");			
+			setStim("leftStim","none");
 		},1000);
 
-		checkMoveNextRound();		
+		checkMoveNextRound();
 		chat.send("NEXTROUND", name, toUser);
 
 }
@@ -448,28 +457,28 @@ function checkMoveNextRound(){
 function endExperiment(){
 		//document.getElementById("StartButton").style.display = 'inLine';
 		//document.getElementById("StartButton").innerHTML = end_of_experiment_text;
-		
 
-		
+
+
 		// write language used
 		// only one participant needs to do this
 		if(name=="Part1"){
 			writeLanguageFile(ims,lastUsedStimLabels);
 		}
-		
+
 		if(name=="Part1" && OIRExperiment && allowRepairInThisExperiment){
 			writeStimOrderFile();
 		}
-		
+
 		experimentOver= true; // set in index.php
-		
+
 		// send to debrief page with chain, generation and score
 		setTimeout("window.location.href = debrief_URL + '?score=' + score.toString() + '&chain='+chain_num.toString() + '&generation='+experiment_filename + '&player='+name;",2000);
 }
 
 function nextRound(){
 	console.log("NextRound");
-	
+
 	if(rounds==undefined){
 		// a bit dodgy - if we have no rounds, wait a bit, then try loading again.
 		// note that if the call to process.php fails, loadData_exper() gets called again
@@ -479,17 +488,18 @@ function nextRound(){
 //		setInterval("nextRound()",2000);
 	}
 	else{
-		console.log(rounds[currentRound]);  // 
+		console.log(rounds[currentRound]);  //
 		clearScreen();
 		dehighlighAllImages();
 		if(sliderExperiment){
 			stopSlideWhistle();
 		}
-		currentlyTraining = false;	
+		currentlyTraining = false;
 		numberCompletedTraining = 0;
-		
-		interactionString = "";	
-		
+    numberOfRepairRounds = 0;
+
+		interactionString = "";
+
 		if(currentRound == rounds.length){
 			// end of experiment
 			endExperiment();
@@ -509,10 +519,10 @@ function nextRound(){
 						lastRoundWasPractice = false;
 					}
 				}
-				
+
 			}
-		
-		
+
+
 			if(rounds[currentRound][PARTBREAK] > 0){
 				// do break
 				//doBreak(rounds[currentRound][PARTBREAK],rounds[currentRound][MESSAGE]);
@@ -522,8 +532,8 @@ function nextRound(){
 					setInnerHTML("scorePanel","Score: "+score +"/"+numberOfTestRounds.toString());
 				}
 				doBreak(rounds[currentRound][PARTBREAK],rounds[currentRound][MESSAGE]);
-				
-				
+
+
 			}
 			else{
 				if(rounds[currentRound][TRAINING]=="1"){
@@ -552,14 +562,14 @@ function nextRound(){
 
 
 function testingRound(target){
-	
+
 	numberOfTestRounds += 1;
-	
+
 	currentTarget = target;
-	
+
 	showMe("scorePanel");
 	console.log("TestingRound");
-	
+
 	if(learnOnlyExperiment){
 		// in a learning only experiment, each participant is always the speaker
 		roleSpeaker = true;
@@ -571,19 +581,19 @@ function testingRound(target){
 			noiseLevelThisRound = 0;
 		}
 	}
-	
+
 	if(allowRepairInThisExperiment){
 		allowRepairInThisRound = true;
 	}
 	else{
 		allowRepairInThisRound = false;
 	}
-	
+
 	// keep track of stimulus order
 	if(OIRExperiment && allowRepairInThisExperiment){
 		stimOrder.push(target.toString());
 	}
-	
+
 	if(roleSpeaker){
 		testingSpeaker1();
 	}
@@ -595,7 +605,7 @@ function testingRound(target){
 		hideMe("typedInput");
 		hideMe("SlideWhistle"); //make invisible
 		hideMe("sendButtonDiv");
-		hideMe("retryButton");	
+		hideMe("retryButton");
 		hideMe("PlayPartnerSignal");
 		hideMe("cont");
 		showMe("BackgroundWaiting");
@@ -616,7 +626,7 @@ function testingSpeaker1(){
 
 	if(sliderExperiment){
 		setBackground("images/backgrounds/SW_SpeakerSpeakB.png");
-		
+
 		// SW
 		showMe("SlideWhistle"); //make visible
 
@@ -629,23 +639,23 @@ function testingSpeaker1(){
 		hideMe("cont");
 	}
 	else{
-		if(!learnOnlyExperiment){	
+		if(!learnOnlyExperiment){
 			// context is not visible in learn only experiment
 			showMe("cont");
 		}
-		
 
-		
+
+
 	}
-	
+
 	if(OIRExperiment){
 		showMe("BackgroundSpeaker");
 		hideMe("BackgroundWaiting");
 	}
-	
+
 	showMe("typedInput");
 	document.getElementById("sendie").focus();
-	
+
 	// set prompts
 	if(learnOnlyExperiment){
 		document.getElementById("InfoPanel").innerHTML = testing_prompt_learnOnly;
@@ -655,7 +665,7 @@ function testingSpeaker1(){
 		document.getElementById("InfoPanel").innerHTML = testing_prompt;
 		setInnerHTML("InfoPanel",testing_prompt);
 	}
-	
+
 // set array
 	var imsIndex = [];
 	for(var i=0; i < ims.length; ++i){
@@ -665,14 +675,14 @@ function testingSpeaker1(){
 //	imsIndex = imsIndex.sort(shuffle);
 	shuffle(imsIndex);
 	stimArray = imsIndex.slice(0,numberOfContextItems);
-	
+
 	if(!containsObject(currentTarget,stimArray)){
 		stimArray = stimArray.slice(0,numberOfContextItems-1);
 		stimArray.push(currentTarget);
 	}
 	//stimArray= stimArray.sort(shuffle);
 	shuffle(stimArray);
-	
+
 	console.log("ALLOW REPAIR");
 	if(OIRExperiment && !allowRepairInThisExperiment){
 		console.log("NO ALLOW REPAIR, GET CONTEXT");
@@ -712,7 +722,7 @@ function testingSpeaker1(){
 
 
 
-	
+
 	if(currentTarget<0){
 		// practice round
 		stimArray = [-1,-2,"none",-3,-4,"none"];
@@ -725,94 +735,94 @@ function testingSpeaker1(){
 		// show speaker the context
 		showContext();
 	}
-	
+
 
 	// TODO hide unwanted elements
 	// TODO make elements visible
-	
+
 	waitingForInput = true;
 	console.log("CURRENT TARGET");
 	console.log(currentTarget);
 	setStim("leftStimTestImage",currentTarget);
 	showMe("leftStimTest");
 	// SW
-	
+
 	// start recording
 	// this means that there's no practicing!
 	if(sliderExperiment){
 		startRecord();
 		startTimer();
 	}
-	
 
-	
+
+
 }
 
 
 function listenerRecieveMessage(m){
 		// listener receives message from speaker
-		
+
 			//setBackground("images/backgrounds/ListenerChoose.png");
 			if(sliderExperiment){
 				setBackground("images/backgrounds/SW_Listener2.png");
-				document.getElementById("playPartnerSignalButton").src = "images/backgrounds/PlayButton.png";	
+				document.getElementById("playPartnerSignalButton").src = "images/backgrounds/PlayButton.png";
 			}
-			
+
 			if(OIRExperiment){
 				showMe("BackgroundListener");
 				hideMe("BackgroundWaiting");
 			}
-			
+
 			waitingForMessage = false;
-			
+
 			// the signal may be composed of two elements - what was typed and what was 'sent' (typed + possible noise)
 			// in the order sent + messageSepCharacter3 + typed
 			var signalPart = m.substring(0,m.indexOf(messageSepCharacter1));
 			signalPart = signalPart.split(messageSepCharacter3);
 			var sentWord = signalPart[0];
 			var typedWord = sentWord;
-			
+
 			if(sentWord.length >1){
 				var typedWord = signalPart[1];
-			}			
+			}
 			currentSentWord = sentWord;
 			speakersWord = sentWord;
-			
+
 			interactionString += "TYPED="+typedWord+";"+"SENT="+sentWord+";";
-			
+
 			var amountOfNoise = currentSentWord.split(noiseChar).length-1;
 			noiseOrder.push(amountOfNoise);
-			
+
 			currentTarget = parseInt(m.substring(m.indexOf(messageSepCharacter1)+1,m.indexOf(messageSepCharacter2)));
 			var sentStims = m.substring(m.indexOf(messageSepCharacter2)+1).split("_");
 			console.log(sentWord);
 			console.log(sentStims);
-			console.log(currentTarget);		
-			
+			console.log(currentTarget);
+
 			// get stim array from speaker's message
 			stimArray = [];
 			for(var i=0; i < sentStims.length;++i){
 				stimArray.push(parseInt(sentStims[i]));
 			}
-			
+
 			// shuffle stim array
-			shuffle(stimArray);//xxx
-			
+			shuffle(stimArray);//
+
 			if(currentTarget<0){
 				// practice round
 				stimArray = [-1,-2,"none",-3,-4,"none"];
 			}
 			contextOrder.push(stimArray);
 			console.log(stimArray);
-	
+
 			// show target word
 			showSpeakerWord(sentWord);
-			
+
 			console.log("Recieve - 1");
-			
+
 			if(sliderExperiment){
 				// SW
-				// show play button			
+				// show play button
 				showMe("PlayPartnerSignal");
 				console.log("Recieve - 2");
 				// set the record buffer in soundSlider.js
@@ -820,7 +830,7 @@ function listenerRecieveMessage(m){
 				// for playback, put padding of silence around recording
 				recordBuffer = bufferPadding.concat(stringToRecordBuffer(sentWord),bufferPadding);
 			}
-			
+
 			// update last used stim
 			// map to actual target
 			// save word that was typed, rather than what was recieved
@@ -828,23 +838,27 @@ function listenerRecieveMessage(m){
 
 			// show the context
 			showContext();
-			
+
 			if(allowRepairInThisRound){
 				showMe("RepairButton");
 			}
-			
+
 			firstListenerEndPlayback = true;
-			
+
 			waitingForListenerClick = true;
 
 }
 
 function initiateRepair(){
+
 	// user has clicked on repairButton
 	if(allowRepairInThisRound & waitingForListenerClick){
 		// only one repair allowed
-		allowRepairInThisRound = false;
-	
+
+    numberOfRepairRounds += 1;
+    if(numberOfRepairRounds>= maxNumberOfRepairRoundsPerStim){
+      allowRepairInThisRound = false;
+    }
 		// keep track of re-presentation of same target
 		// (do this regardless of who it is)
 		if(OIRExperiment && allowRepairInThisExperiment){
@@ -858,9 +872,9 @@ function initiateRepair(){
 
 		// send a signal to the speaker
 		chat.send("???", name, toUser);
-		
+
 		interactionString += "RESP=???;";
-		
+
 		waitingForMessage = true;
 		// put message for listener
 		wait();
@@ -871,50 +885,53 @@ function initiateRepair(){
 function speakerRespondsToRepair(m){
 	//testingSpeaker1(rounds[currentRound-1][STIMULUS]); //TODO: check this is the right round.
 	// we can't call testingSpeaker1 directly, because it resets the context.
-	
+
+
+  numberOfRepairRounds += 1;
+
 	// show message that repair has been initiated
-	document.getElementById("InfoPanel").innerHTML = 	prompt_speaker_repair;	
+	document.getElementById("InfoPanel").innerHTML = 	prompt_speaker_repair;
 	setInnerHTML("InfoPanel",prompt_speaker_repair);
-	
+
 	if(cont_visible_after_choice){
 		// show speaker the context
 		showContext();
 		showMe("cont");
 	}
-	
+
 	// show typing box
 	showMe("typedInput");
 	showMe("BackgroundSpeaker");
 	showMe("RepairIndicator");
 	document.getElementById("sendie").focus();
-	
-	
-	// allow input 
+
+
+	// allow input
 	waitingForInput = true;
 	console.log("CURRENT TARGET");
 	console.log(currentTarget);
 	setStim("leftStimTestImage",currentTarget);
 	showMe("leftStimTest");
-	
+
 	// keep track of re-presentation of same target
 	//if(name=="Part1"){
 	if(OIRExperiment && allowRepairInThisExperiment){
 		stimOrder.push(currentTarget.toString());
 		contextOrder.push(contextOrder[contextOrder.length-1]);
 	}
-	//}	
+	//}
 
-	
+
 }
 
 function recieveMessage(m){
 	console.log("recieveMessage");
 	console.log(m);
-	
+
 	document.getElementById("InfoPanel").innerHTML = "";
 	setInnerHTML("InfoPanel","");
 		if(roleSpeaker){
-		
+
 			interactionString += "RESP="+m+";";
 			// feedback from listener
 			if(isNaN(m)){
@@ -923,14 +940,14 @@ function recieveMessage(m){
 				}
 			else {
 				listenersResponse = parseInt(m);
-				 
+
 				dofeedback(listenersResponse);
 			}
 		}
 		else{
-			listenerRecieveMessage(m);			
+			listenerRecieveMessage(m);
 		}
-	
+
 }
 
 function recieveExperDetails(mss){
@@ -943,7 +960,7 @@ function showContext(){
 				setStim("cont"+(i+1),stimArray[i]);
 				}
 			// wait for a bit so that images load
-			if(!learnOnlyExperiment){	
+			if(!learnOnlyExperiment){
 				setTimeout(function(){showMe("cont");},500);
 			}
 }
@@ -956,10 +973,10 @@ function readyToStart(){
 	console.log("READY TO START");
 	numReadyToStart += 1;
 	console.log(numReadyToStart);
-	
+
 	if(numReadyToStart ==2 || learnOnlyExperiment){
 		// TODO set infotext to emtpy
-		
+
 		numReadyToStart = 0;
 		nextRound();
 	}
@@ -979,7 +996,7 @@ function clearScreen(){
 		console.log("CLEAR SCREEN");
 		hideMe("feedbackPanel");
 	//	svg.getElementById("FeedbackPanel").setAttribute("display" , "none");
-		
+
 		if(sliderExperiment){
 			stopTimer();
 		}
@@ -994,10 +1011,10 @@ function clearScreen(){
 
 
 function dofeedback(m){
-	
+
 	hideMe("RepairButton");
 	hideMe("RepairIndicator");
-	
+
 	if(name=="Part1"){
 		saveData();
 	}
@@ -1008,13 +1025,13 @@ function dofeedback(m){
 	}
 	else{
 		console.log("doFeedback");
-	
+
 		hideMe("PlayPartnerSignal");
 		if(sliderExperiment){
 			stopTimer();
 		}
-		
-	
+
+
 
 			// highlight correct options
 // 			if(roleSpeaker){
@@ -1030,17 +1047,17 @@ function dofeedback(m){
 			hideMe("leftStimTest");
 
 			if(roleSpeaker){
-				
-			
-	//			setStim("rightStimTestImage",listenersResponse);		
-//				setStim("leftStimTestImage",currentTarget);	
-				
+
+
+	//			setStim("rightStimTestImage",listenersResponse);
+//				setStim("leftStimTestImage",currentTarget);
+
 				setStim("feedbackYouChoseImage",currentTarget);
 				setStim("feedbackTheyChoseImage",listenersResponse);
-				
+
 				//setInnerHTML("feedbackYouChoseText","Your target:");
 				//setInnerHTML("feedbackTheyChoseText","Your partner chose:");
-				
+
 			}
 			else{
 				//setStim("rightStimTestImage",currentTarget);
@@ -1048,17 +1065,17 @@ function dofeedback(m){
 
 				setStim("feedbackYouChoseImage",listenersResponse);
 				setStim("feedbackTheyChoseImage",currentTarget);
-				
+
 				setInnerHTML("feedbackYouChoseText","You chose:");
 				setInnerHTML("feedbackTheyChoseText","Your partner's target:");
 
 
 			}
-		
-		
-	
-	
-	
+
+
+
+
+
 		if(listenersResponse == currentTarget){
 			// good feedback
 			setImageInWindow("feedbackPanelImage",correctImage);
@@ -1067,12 +1084,12 @@ function dofeedback(m){
 		else{
 			//bad feedback
 			setImageInWindow("feedbackPanelImage",incorrectImage);
-			
+
 		}
-		
+
 		showMe("feedbackPanel");
-		
-		
+
+
 		setInnerHTML("scorePanel","Score: "+score.toString() +"/"+numberOfTestRounds.toString());
 		document.getElementById("scorePanel").innerHTML = "Score: "+score.toString() +"/"+numberOfTestRounds.toString();
 
@@ -1086,7 +1103,7 @@ function dofeedback(m){
 	// 	else{
 	// 		window.setTimeout(function(){nextRound();},5000);
 	// 	}
-		
+
 		// instead of calling nextRound(), we just use the 'readyToStart' funcitonality
 		// both participants have to check in before moving on.
 		if(!dictionaryExperiment || currentTarget<0){
@@ -1095,10 +1112,10 @@ function dofeedback(m){
 		else{
 		// show notebook div, which contains buttons that will trigger addToNotebook, which does the line above
 			showAddToNotebook();
-			
+
 		}
 	}
-	
+
 }
 
 function showAddToNotebook(){
@@ -1123,7 +1140,7 @@ function addToNotebook(addTo){
 	}
 	window.setTimeout('chat.send("READYTOSTART", name, toUser);',50);
 	document.getElementById("InfoPanel").innerHTML = wait_for_partner_text;
-	
+
 }
 
 
@@ -1133,7 +1150,7 @@ function showSpeakerWord(sentWord){
 		showMe("middleStimTest");
 		setInnerHTML("InfoPanel",recieveSpeakersWord_text);
 	}
-	
+
 	}
 
 function doBreak(t,m){
@@ -1143,13 +1160,13 @@ function doBreak(t,m){
 
 	showMe("StartButton");
 	setInnerHTML("StartButton",waitText + "<br /> "+ partBreakTimer);
-	
+
 	showMe("InfoPanel");
 	//setInnerHTML("InfoPanel",break_text + m);
 	setInnerHTML("InfoPanel",break_text + m);
-	
+
 	myTimerVar=setInterval(function(){myTimer()},1000);
-	
+
 }
 
 function myTimer(){
@@ -1161,15 +1178,27 @@ function myTimer(){
 
 	}
 	else{
-		setInnerHTML("StartButton",waitText + "<br /> "+ partBreakTimer);	
+		setInnerHTML("StartButton",waitText + "<br /> "+ partBreakTimer);
 	}
 }
 
 function addNoise(text){
 
-	var doNotApplyNoise = Math.random()>noiseParams[2];
-	var minNoise = noiseParams[0];
-	var maxNoise = noiseParams[1];
+  var thisNoiseParams = noiseParams;
+  if(numberOfRepairRounds > 0 & differentNoiseProbAfterFirstRepair){
+    thisNoiseParams = noiseParamsAfterFirstRepair;
+  }
+  console.log(["NOISE PARAMS",thisNoiseParams])
+	var doNotApplyNoise = Math.random()>thisNoiseParams[2];
+
+  if(doNotApplyNoise){
+		// with a certain probability, don't apply noise at all
+		return(text);
+	}
+
+
+	var minNoise = thisNoiseParams[0];
+	var maxNoise = thisNoiseParams[1];
 	var l = text.length;
 	if(maxNoise>l){ maxNoise = l;}
 	if(minNoise>l){ minNoise = l;}
@@ -1186,16 +1215,13 @@ function addNoise(text){
 		}
 	}
 
-	if(doNotApplyNoise){
-		// with a certain probability, don't apply noise at all
-		return(text);
-	}
+
 
 	switch(noiseType) {
 		case "bunched":
-			
+
 			startAt = getRandomInt(0,l-numNoiseChars);
-			
+
 			outText = "";
 			for(var i =0; i<l;++i){
 				if(i>=startAt & (i<(startAt+numNoiseChars))){
@@ -1205,18 +1231,18 @@ function addNoise(text){
 					outText += text[i];
 				}
 			}
-			
+
 			return(outText);
 			break;
 		case "spread":
-		
+
 			locs = [];
 			for(var i=0;i<l;++i){
 				locs.push(i);
 			}
 			shuffle(locs);
 			locs = locs.slice(0,numNoiseChars);
-			
+
 			outText = "";
 			for(var i =0; i<l;++i){
 				if(locs.indexOf(i)>=0){
@@ -1226,12 +1252,12 @@ function addNoise(text){
 					outText += text[i];
 				}
 			}
-		
+
 			return(text);
 			break;
 		default:
 			return(text);
-	} 
+	}
 
 }
 
@@ -1240,21 +1266,21 @@ function sendSpeakerMessage(text){
 	console.log("sendSpeakerMessage");
 	console.log(stimArray);
 	console.log(text);
-	
+
 	speakersWord = text; // what was typed
 	currentSentWord = addNoise(text);
-	
+
 	var amountOfNoise = currentSentWord.split(noiseChar).length-1;
 	noiseOrder.push(amountOfNoise);
-	
-	
+
+
 	interactionString += "TYPED="+speakersWord+";"+"SENT="+currentSentWord+";";
 	// for the string we send, add the clean version of the signal, too:
 	currentSentWord = currentSentWord + messageSepCharacter3 + speakersWord;
 	console.log(currentSentWord);
-	
 
-	
+
+
 //	document.getElementById("typedInput").style.display = 'none';
 	// SW
 	hideMe("SlideWhistle");
@@ -1264,38 +1290,38 @@ function sendSpeakerMessage(text){
 	hideMe("sendButtonDiv");
 	hideMe("retryButton");
 	hideMe("PlayPartnerSignal");
-	
+
 	if(OIRExperiment){
 		showMe("BackgroundWaiting");
 		hideMe("BackgroundSpeaker");
 	}
-	
+
 //	setBackground("images/backgrounds/speakerSpeak.png");
 	// SW
 	setBackground("images/backgrounds/SW_SpeakerWait.png");
 //	document.getElementById("middleStimTest").innerHTML = speakersWord;
-	
+
 
 	// update last used stim
 	// map to actual target
 	// also done on listener's side
 	// update to what was typed
 	updateLastUsedStimLabels(currentTarget,speakersWord);
-	
 
-	
+
+
 	if(learnOnlyExperiment){
 		// if it's only a learning experiment,
 		// then skip straight to receiving message
 		setTimeout("recieveMessage("+currentTarget.toString()+");",1000)
 	}
 	else{
-//		setInnerHTML("InfoPanel").innerHTML = wait_for_partner_text;	
+//		setInnerHTML("InfoPanel").innerHTML = wait_for_partner_text;
 			setInnerHTML("InfoPanel",wait_for_partner_text);
 		// send message
 		text2 = currentSentWord + messageSepCharacter1 + currentTarget+ messageSepCharacter2 + stimArray.join("_");  // sep character used to be '#'
-				
-		chat.send(text2, name, toUser);	
+
+		chat.send(text2, name, toUser);
 		if(sliderExperiment){
 			stopTimer();
 		}
@@ -1306,10 +1332,10 @@ function sendSpeakerMessage(text){
 function listenerClick(x){
 	// incoming directly from index.php definitions
 	console.log("Listener click");
-	console.log(x);	
-	
+	console.log(x);
+
 	x = parseInt(x);
-	
+
 	if(instructionPhase){
 		exampleChoice = x;
 		sceneCounter += 1;
@@ -1317,7 +1343,7 @@ function listenerClick(x){
 	}
 	else{
 		if(waitingForListenerClick){
-	
+
 				// send choice to speaker
 				chat.send(stimArray[x],name,toUser);
 				waitingForListenerClick = false;
@@ -1325,14 +1351,14 @@ function listenerClick(x){
 				// remove all images
 				if(!cont_visible_after_choice){
 					removeImages();
-				}	
-			
+				}
+
 			listenersResponse = stimArray[x];
 			//setStim("leftStimTestImage",stimArray[x]);
-		
-			
+
+
 			dofeedback(listenersResponse);
-		
+
 		}
 	}
 }
@@ -1367,7 +1393,7 @@ function saveData(){
 		ss = "0"+ss;
 	}
 	var timeX =  mm+'_'+dd+'_'+yyyy+'_'+hh+minmin+ss;
-	
+
 	// make dictionary string
 	var dStr = "";
 	for(var i=0; i<currentDictionary.length; ++i){
@@ -1377,13 +1403,13 @@ function saveData(){
 	var resString = [
 		currentTarget,
 		stimArray.join("_"),
-		listenersResponse, 
+		listenersResponse,
 		speakersWord,
 		timeX,
 		experimentName,
 		experiment_filename,
 		language_filename,
-		name,				// speaker name	
+		name,				// speaker name
 		dStr, // dictionary
 		currentExperimentType,
 		interactionString,//  string containing interaction in a multi-sequence round
@@ -1395,8 +1421,8 @@ function saveData(){
 	sendResults(experimentName,resString);
 
 	writeLanguageFile(ims,lastUsedStimLabels);
-	
-	
+
+
      // x1
 	if(OIRExperiment && allowRepairInThisExperiment){
 		writeStimOrderFile();
@@ -1421,20 +1447,20 @@ function loadData_exper(){
 		var firstGenEx = "0";
 		if(firstGeneration){
 			firstGenEx = "1";
-		}	 
-		
-		getRandExperimentFile(firstGenEx,experiment_filename+".exper");		
+		}
+
+		getRandExperimentFile(firstGenEx,experiment_filename+".exper");
 	}
-	
+
 	else{
 	// listener loads the file written by the speaker
 	// The file might not be written yet, but the speaker will let the listener know
 	// if they need to re-load it
 		getExperiment(experiment_filename+".exper","exper");
 	}
-	
+
 	removeSynchButton();
-	
+
 }
 
 function loadData_stimOrder(){
@@ -1450,11 +1476,11 @@ function recieveData(contents,filetype){
 
 	if(filetype=='exper'){
 		// experiment file
-	
+
 		loadExperimentFromString(contents);
-		
+
 		removeSynchButton();
-		console.log("IS SPEAKER");					
+		console.log("IS SPEAKER");
 		// If the speaker has recieved the file, then the experiment file is written and the listener
 		// can load it.  So send a message to the listener to load the file.
 		if(roleSpeaker){
@@ -1470,18 +1496,18 @@ function recieveData(contents,filetype){
 			}
 		}
 	}
-	
+
 	else{
-	
+
 		if(filetype=='lang'){
 		// lanuage file
-	
+
 		loadLanguage(contents);
 		//dictLoad();
 		practiceDictLoad();
 		}
 		else{
-			if(filetype=='stimOrder'){	
+			if(filetype=='stimOrder'){
 				// stimOrder file
 				loadStimOrder(contents);
 				// send new rounds to listener
@@ -1489,7 +1515,7 @@ function recieveData(contents,filetype){
 			}
 		}
 	}
-	
+
 }
 
 
@@ -1500,7 +1526,7 @@ function loadExperimentFromString(contents){
 		var lines = contents.split("\n");
 		console.log(lines.length);
 		var rownames = lines[0].split("\t");
-		
+
 		var trainingInd = rownames.indexOf("Training");
 		var stimulusInd = rownames.indexOf("Stimulus");
 		var partBreakInd = rownames.indexOf("PartBreak");
@@ -1509,12 +1535,12 @@ function loadExperimentFromString(contents){
 		var pracInd = rownames.indexOf("Practice");
 		var noisInd = rownames.indexOf("Noise");
 		var contextInd = rownames.indexOf("Context");
-		
+
 		rounds = [];
 		for(var i=1; i < lines.length -1;++i){  // start from row 1
 			var ix = lines[i].split("\t");
 			if(ix.length>1){
-				
+
 				// add amount of noise
 				if(noisInd>=0){
 					// include noise
@@ -1528,7 +1554,7 @@ function loadExperimentFromString(contents){
 							noiseThisRound = 0;
 						}
 					}
-					
+
 					// include context
 					var contextThisRound = "";
 					if(contextInd>=0){
@@ -1544,11 +1570,11 @@ function loadExperimentFromString(contents){
 		}
 		console.log("LOADED FROM STIM ORDER");
 		for(var i=0;i<rounds.length;++i){
-		console.log(rounds[i]);		
+		console.log(rounds[i]);
 		}
-		
+
 		removeSynchButton();
-		
+
 }
 
 function encodeExperimentString(){
@@ -1571,7 +1597,7 @@ function encodeExperimentString(){
 function sendStimOrderToListener(){
 	// speaker sends revised experiment to listener
 	var stimOrderString = encodeExperimentString();
-	chat.send("STIMORDER"+stimOrderString, name, toUser);	
+	chat.send("STIMORDER"+stimOrderString, name, toUser);
 }
 
 function loadLanguage(contents){
@@ -1584,7 +1610,7 @@ function loadLanguage(contents){
 			if(labx.length>0){
 				stimLabels.push(labx);
 				// read stimulus images from language file
-				ims_tmp.push(lines[i].split("\t")[1]);		
+				ims_tmp.push(lines[i].split("\t")[1]);
 			}
 		}
 		if(ims_tmp.length == stimLabels.length){
@@ -1608,7 +1634,7 @@ function loadStimOrder(contents){
 //var ROLESWITCH = 4;
 //var PRACTICEIND = 5;
 	// get list of stims
-	
+
 	// each line is a pair of stimNumber\tAmountOfNoise\tpreviousContext, but keep together while we shuffle
 	// previousContext is a string of numbers seperated by _
 	var prevStims = contents.split("\n");
@@ -1624,7 +1650,7 @@ function loadStimOrder(contents){
 			prevStimNums.push(prevStims[i]);
 		}
 	}
-	
+
 	// shuffle order of stimuli
 	// BUT - the number of targets shown to each participant as speaker should be balanced.
 	// so, extract every other value, shuffle those, then put them back together.
@@ -1633,18 +1659,18 @@ function loadStimOrder(contents){
 	for(var i=0;i<prevStimNums.length;++i){
 		if( (i % 2 )==0){
 			stimList1.push(prevStimNums[i]);
-		} 
+		}
 		else{
-			stimList2.push(prevStimNums[i]);			
+			stimList2.push(prevStimNums[i]);
 		}
 	}
 	console.log("SPIT");
 	console.log(stimList1);
 	console.log(stimList2);
-	
+
 	shuffle(stimList1);
 	shuffle(stimList2);
-	
+
 	maxLength = Math.max(stimList1.length,stimList2.length);
 	console.log(maxLength);
 	var prevStimNums2 = [];
@@ -1668,8 +1694,8 @@ function loadStimOrder(contents){
 	console.log(prevStimNums);
 	console.log(prevStimNums2);
 	console.log(prevNoise);
-	
-	
+
+
 	// make a copy of the rounds variable, swapping the stimuli for prevStimNums2
 	var newRounds = [];
 	var count = 0;
@@ -1677,16 +1703,16 @@ function loadStimOrder(contents){
 	var i =0;
 	while((count < prevStimNums2.length) && (i<rounds.length)){
 //	for(var i=0; i< prevStimNums2.length; ++ i){
-		
+
 		if(rounds[i][TRAINING]=="0" && rounds[i][PRACTICEIND]=="0" && rounds[i][PARTBREAK]=="0"){
 			var rx = rounds[i];
 			console.log(count);
 			rx[STIMULUS] = prevStimNums2[count];
 			// add noise column
-			rx.push(prevNoise[count]);  
+			rx.push(prevNoise[count]);
 			// add context column
 			rx.push(prevContext[count]);
-			newRounds.push(rx);		
+			newRounds.push(rx);
 			count += 1;
 		}
 		else{
@@ -1703,7 +1729,7 @@ function loadStimOrder(contents){
 		}
 		i += 1;
 	}
-	
+
 	// there might be fewer rounds in 'rounds' than there are prevStimNums2
 	if(count < prevStimNums2.length){
 		for(var i=count; i < prevStimNums2.length; ++i){
@@ -1719,7 +1745,7 @@ function loadStimOrder(contents){
 			newRounds.push([practicex,stimx,partbreakx,msx,roleswitchx,pracx,noisex,contextx]);
 		}
 	}
-	
+
 	// replace rounds with newRounds;
 	rounds = newRounds;
 	console.log("OUT");
@@ -1729,15 +1755,15 @@ function loadStimOrder(contents){
 }
 
 function writeLanguageFile(imageFiles,signals){
-	
+
 		console.log("Sending language file");
 		var ret = "";
 		for(var i=0; i< imageFiles.length; ++i){
 			ret += signals[i] + "\t" + imageFiles[i] + "\n";
 		}
-		
+
 		sendResults(experiment_filename+".lang",ret);
-	
+
 
 }
 
@@ -1747,9 +1773,9 @@ function writeStimOrderFile(){
 	console.log(contextOrder);
 	ret = "";
 	for(var i=0;i<stimOrder.length;++i){
-	
+
 		var contextString = contextOrder[i].join("_");
-	
+
 		ret += stimOrder[i]+"\t"+noiseOrder[i]+"\t"+contextString+"\n";
 	}
 	sendResults(experiment_filename+".order",ret);
@@ -1765,7 +1791,7 @@ function playPartnerSignal(){
 	document.getElementById("playPartnerSignalButton").src = "images/backgrounds/PlayButton_occupied.png";
 
 	// check if suitable to do so
-	if(waitingForListenerClick){			
+	if(waitingForListenerClick){
 		console.log("playBack starting");
 		console.log(playingBack);
 		console.log(recordBuffer.length);
@@ -1801,12 +1827,12 @@ function exper_EndPlayback(){
 			document.getElementById("playPartnerSignalButton").src = "images/backgrounds/PlayButton.png";
 			stopSlideWhistle();
 			},500);
-			
+
 		if(firstListenerEndPlayback){
 			firstListenerEndPlayback = false;
 			if(sliderExperiment){
 				startTimer();
-			}				
+			}
 		}
 
 	}
@@ -1815,7 +1841,7 @@ function exper_EndPlayback(){
 function sendSliderSignal(){
 	if(waitingForInput & !instructionPhase){
 		stopRecord();
-		
+
 		// is recording long enough?
 		if(recordBuffer.length > minimumRecordLength){
 			// call to communicaiton program
@@ -1829,7 +1855,7 @@ function sendSliderSignal(){
 			recordBuffer = Array();
 			startRecord();
 		}
-		
+
 	}
 }
 
@@ -1838,12 +1864,12 @@ function sendTextSignal(e){
 	if(e.keyCode == 13){
 		var str = document.getElementById("sendie").value;
 		if(validateDict(str)){
-			
+
 			// disable text entry
 			document.getElementById("StartButton").focus();
 			hideMe("typedInput");
 			document.getElementById("sendie").value = "";
-			
+
 			sendSpeakerMessage(str);
 		}
 		else{
@@ -1854,7 +1880,7 @@ function sendTextSignal(e){
 }
 
 function animateSendButton(){
-	
+
 	if(animateSendButtonCount==0){
 		document.getElementById("sendButton").src = "images/backgrounds/SendButtonDark.png";
 	}
@@ -1862,14 +1888,14 @@ function animateSendButton(){
 		document.getElementById("sendButton").src = "images/backgrounds/SendButton.png";
 		animateSendButtonCount == 0;
 	}
-	
+
 	animateSendButtonCount += 1;
 }
 
 function writeParticipantDetails(){
 		// write sex, age of participants to file
 		// TODO
-		
+
 		var sex = "NA";//document.getElementById("data_sex").value;
 // 			Sex<br />
 // 			<select id='data_sex' size="2" style="font-size:20px; width:100%">
@@ -1877,9 +1903,9 @@ function writeParticipantDetails(){
 // 				<option>Male</option>
 // 			</select>
 		var age = document.getElementById("data_age").value;
-		
+
 		sendPartData(experiment_filename + "\t" + name +  "\t" + sex + "\t" + age);
-		
+
 }
 
 function failLoadData(filename,filetype){
@@ -1897,7 +1923,7 @@ function failLoadData(filename,filetype){
 }
 
 function synchExper(){
-	loadData();  
+	loadData();
 	document.getElementById("SynchButton").style.top = "0%";
 	document.getElementById("SynchButton").style.left = "0%";
 	removeSynchButton();
@@ -1926,24 +1952,24 @@ function stopTimer(){
 }
 
 function drawTimer(endangle){
-	
+
 //	endangle = endangle * (2 * Math.PI);
 	endangle = (3.5 - (2*endangle)) ;
-	
+
 	var canvas = document.getElementById("timerCanvas");
     var context = canvas.getContext("2d");
     var cx = canvas.width / 2;
     var cy = canvas.height / 2;
     var radius = cx - 6;
 
-	context.fillStyle = '#ff0000';   
+	context.fillStyle = '#ff0000';
 	context.lineWidth=4;
 	context.beginPath();
-	context.arc(cx,cy,radius, 0, Math.PI*2, true); 
+	context.arc(cx,cy,radius, 0, Math.PI*2, true);
 	context.closePath();
 	context.fill();
 
-	
+
 	context.fillStyle = '#00973e';
 	context.moveTo(cx,cy);
 	context.arc(cx,cy,radius,1.5*Math.PI,endangle* Math.PI,false);
@@ -1953,25 +1979,25 @@ function drawTimer(endangle){
 	context.stroke();
 	context.fill();
 	}
-	
+
 	function flashTimer(x){
 	var canvas = document.getElementById("timerCanvas");
     var context = canvas.getContext("2d");
     var cx = canvas.width / 2;
     var cy = canvas.height / 2;
     var radius = cx - 6;
-    
+
    	x = Math.abs(x % 100);
 
 	context.fillStyle = 'hsl(0,100%,' + x+'%)';
 
 	context.lineWidth=4;
 	context.beginPath();
-	context.arc(cx,cy,radius, 0, Math.PI*2, true); 
+	context.arc(cx,cy,radius, 0, Math.PI*2, true);
 	context.closePath();
 	context.fill();
 	}
-	
+
 	function minusTimer(){
 //		console.log(timerTime/maxTimerTime );
 		if(timerTime<0){
@@ -1983,7 +2009,7 @@ function drawTimer(endangle){
 			drawTimer(timerTime/maxTimerTime );
 			}
 	}
-	
+
 // Dictionary functions
 
 function dictLoad(){
@@ -2035,19 +2061,19 @@ function dictionaryTextClick(x){
 function dictionaryTextKey(e){
 	if(e.keyCode == 13){
 		dictionaryTextKey2(e);
-	}	
+	}
 }
 
 function dictionaryTextKey2(e){
 	var n = e.target.id;
-	var tx = document.getElementById(n).value;	
+	var tx = document.getElementById(n).value;
 	var meaning_num = parseInt(n.substring(1))-1;
 	if(dictionaryOrderIsRandom){
 		// meaning_num matches visual dictionary position
 		// not meaning list index
 		meaning_num = dictOrder[meaning_num];
 	}
-	
+
 	//document.getElementById(n).disabled = true;
 	document.getElementById("sendie").focus();
 	if(!validateDict(tx)){
@@ -2060,7 +2086,7 @@ function dictionaryTextKey2(e){
 	else{
 		currentDictionary[meaning_num] = tx;
 	}
-	
+
 }
 
 function validateDict(str){
@@ -2109,8 +2135,8 @@ function getRandomDictOrder(){
 // 		dx.push(i);
 // 	}
 // 	shuffle(dx);
-// 	return dx;	
- 	var orderX = new Array();	
+// 	return dx;
+ 	var orderX = new Array();
 	// set shape order
 	shapeOrder = new Array();
 	for(i=0;i<4; ++i){
@@ -2122,8 +2148,8 @@ function getRandomDictOrder(){
 	for(i=0;i<4; ++i){
 		patternOrder.push(i)
 	}
-	shuffle(patternOrder);	
-	
+	shuffle(patternOrder);
+
 	for(var s=0;s<shapeOrder.length;++s){
 		for(var p=0;p<patternOrder.length;++p){
 			orderX.push(patternOrder[p] + (shapeOrder[s]*4))
@@ -2147,7 +2173,7 @@ clearScreen();
 // 	divString = divString + '</div>';
 // 	return divString;
 // }
-// 
+//
 // function makeEntryDiv(n){
 // 	return '<div id="d' + n +
 // 	'"><img id="d'+ n +

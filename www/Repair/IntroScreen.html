@@ -11,7 +11,7 @@
 
 
 <div style="position: absolute; left: 5%; width: 28%; height: 60%;font-size:20px">
-	Chain<br>
+	Channel<br>
 	<select name="chain" id='O_chainSelect' size="8" onchange="O_changeChain()" style="font-size:20px; width:100%">
 		<option selected>1</option>
 		<option>2</option>
@@ -26,7 +26,7 @@
 	</select>
 <br /><br />
 	Player <br />
-	<select name="player" size="2" style="font-size:20px;">
+	<select name="player" size="2" style="font-size:20px;width:90%">
 		<option selected>Part1</option>
 		<option>Part2</option>
 	</select>
@@ -34,11 +34,24 @@
 	<br />
 	Condition
 	<br />
-	<select name="condition" size="3" style="font-size:20px;">
+	<select name="condition" size="3" style="font-size:20px;width:90%">
 		<option selected>Repair</option>
 		<option selected>No Repair</option>
 	</select>
-	<input name="altName" type="text" value="Exper"  style="display:none;"><br />
+	<input name="altName" type="text" value="Exper"  style="display:none;width:90%"><br />
+	<br />
+	Generation (for labelling only)
+	<br />
+	<select name="genName" size="6" style="font-size:20px; width:90%">
+		<option selected>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+		<option>8</option>
+	</select>
 </div>
 
 
@@ -50,7 +63,7 @@
 		<input id="SearchLang" onkeyup="updateSearch('SearchLang')" placeholder="Search" style="width: 100%; font-size:14px; padding:10px; margin:5px">
 		</div>
 		<div style="position: absolute; left: 50%; width: 50%; height: 100%;">
-		Stim Order Parent<br>
+		Stim Order Parent (doesn't matter for repair condition)<br>
 		<select name="stimO" id='O_stimOrderSelect' size="10" style="font-size:14px; width:100%;"></select>
 		<br />
 		<input id="SearchOrder" onkeyup="updateSearch('SearchOrder')" placeholder="Search" style="width: 100%; font-size:14px; padding:10px; margin:5px">
@@ -67,7 +80,7 @@
 
 <input type="button" id="Reload" onclick="reload()" style="position: absolute; left: 35%; top: 80%; width: 20%; height: 15%; font-size:40px" value="Reload files">
 
-<input type="button" id="showAllFiles()" onclick="showAllFiles()" style="position: absolute; left: 5%; top: 80%; width: 20%; height: 15%; font-size:20px" value="Turn off filter by Channel">
+<input type="button" id="showAllFiles" onclick="showAllFiles()" style="position: absolute; left: 5%; top: 80%; width: 20%; height: 15%; font-size:20px" value="Turn on filter by Channel">
 
 </body>
 <script type="text/javascript">
@@ -203,10 +216,17 @@ function reload(){
 
 function showAllFiles(){
 	showAllFilesX = !showAllFilesX;
+
+	if(showAllFilesX){
+		document.getElementById("showAllFiles").value = "Turn on filter by Channel";
+	} else{
+		document.getElementById("showAllFiles").value = "Turn off filter by Channel";
+	}
+
 	reload();
 }
 
-var showAllFilesX = false;
+var showAllFilesX = true;
 getResultsFiles();
 
 
@@ -225,15 +245,29 @@ function updateSearch(idx){
 	document.getElementById(selectorid).innerHTML = "";
 	var genElement = document.getElementById(selectorid);
 	var searchWord = document.getElementById(idx).value.toLowerCase();
+
+
+	var searchWordsX = searchWord.split(" ");
+	var searchWords = [];
+	for(var i=0;i<searchWordsX.length;++i){
+		if(searchWordsX[i].length>0){
+			searchWords.push(searchWordsX[i]);
+		}
+	}
+
 	for(var i=0; i< resultsFiles.length; ++i){
 		// starts with "START" and has no underscores
 		var addToList = false;
 		if(searchWord.length == 0){
 			addToList = true;
 		} else{
-			if(resultsFiles[i].toLowerCase().indexOf(searchWord)>=0 ){
-				addToList = true;
+			var numMatches = 0;
+			for(var sx=0;sx<searchWords.length;++sx){
+				if(resultsFiles[i].toLowerCase().indexOf(searchWords[sx])>=0 ){
+					numMatches += 1;
+				}
 			}
+			addToList = numMatches == searchWords.length;
 		}
 
 		if(addToList){
