@@ -20,8 +20,7 @@ var maxNumberOfRepairRoundsPerStim = 1;
 var numberOfRepairRounds = 0; //current count of repair rounds for this stim
 
 var noiseType = "bunched"; // "none", "bunched", "spread"
-//var noiseParams = [3,5,0.5]; // min, max noise characters, porb of noise occuring
-var noiseParams = [3,5,1.0]; // min, max noise characters, porb of noise occuring
+var noiseParams = [3,5,0.5]; // min, max noise characters, porb of noise occuring
 var noiseChar = "#";
 
 var differentNoiseProbAfterFirstRepair = true;
