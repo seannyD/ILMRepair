@@ -1,0 +1,207 @@
+<html style="overflow: hidden; height: 100%;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<script type="text/javascript" src="jquery.min.js"></script>
+
+
+<body style="margin:0; padding:0;">
+<FORM METHOD="LINK" ACTION="Chat/index.php">
+
+<div id="O_" style="font-size:20px; position: absolute; width:100%; height: 100%">
+
+
+<div style="position: absolute; left: 5%; width: 100%; height: 80%;font-size:20px">
+	Chain<br>
+	<select name="chain" id='O_chainSelect' size="10" onchange="O_changeChain()" style="font-size:20px; width:25%">
+		<option selected>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+
+	
+	</select>
+</div>
+
+
+<div style="position: absolute; left: 35%; width: 100%; height: 100%;">
+	Language Parent <br>
+	<select name="gen" id='O_genSelect' size="10" style="font-size:20px; width:25%"><option selected>First Generation</option></select>
+	<br>
+	Stim Order Parent<br>	
+	<select name="stimO" id='O_stimOrderSelect' size="10" style="font-size:20px; width:25%;"></select>
+	
+</div>
+
+<div style="position:absolute; left:65%; height: 35%; width: 100% ">
+	Player <br />
+	<select name="player" size="2" style="position: absolute; font-size:20px; width:25%">
+		<option selected>Part1</option>
+		<option>Part2</option>
+	</select>
+	<div style="position: relative; top:40%;">Condition</div>
+	<select name="condition" size="3" style="position: relative; font-size:20px; top:50%; width:25%;">
+		<option selected>Repair</option>
+		<option selected>No Repair</option>
+	</select>
+	<br />
+	ExperName: <input name="altName" type="text" value="Exper"><br />
+</div>
+
+
+<input type="submit" value="Start!" onsubmit="return validateForm()" style="position: absolute; left: 65%; top: 60%; width: 25%; height: 20%; font-size:40px">
+
+</div>
+</form>
+
+<input type="button" id="Reload" onclick="reload()" style="position: absolute; left: 35%; top: 65%; width: 20%; height: 15%; font-size:40px" value="Reload"> 
+
+<input type="button" id="showAllFiles()" onclick="showAllFiles()" style="position: absolute; left: 5%; top: 65%; width: 20%; height: 15%; font-size:40px" value="Show All Files"> 
+
+</body>
+<script type="text/javascript">
+
+var resultsFiles = Array();
+var stimOrderresultsFiles = Array();
+
+function validateForm(){
+	if(document.getElementById("O_chainSelect").value == null){
+		alert("Chain not specified");
+		return false;
+	}
+	if(document.getElementById("O_genSelect").value == null){
+		alert("Generation not specified");
+		return false;
+	}	
+}
+
+function processResultsFiles(f){
+	console.log(f.split(","));
+	var fs = f.split(",");
+	resultsFiles = Array();
+	stimOrderresultsFiles = Array();
+	for(var i=0;i<fs.length; ++ i){
+		if(fs[i].substring(fs[i].length-5,fs[i].length) == ".lang"){
+			// add to list
+			resultsFiles.push(fs[i]);
+		}
+		if(fs[i].substring(fs[i].length-6,fs[i].length) == ".order"){
+			// add to list
+			stimOrderresultsFiles.push(fs[i]);
+		}
+	}
+	O_changeChain();
+}
+
+function O_changeChain(){
+
+	// clear generation list
+	document.getElementById('O_genSelect').innerHTML = "";
+	document.getElementById('O_stimOrderSelect').innerHTML = "";
+
+	var chain = document.getElementById("O_chainSelect").value;
+	var genElement = document.getElementById("O_genSelect");
+	var stimOrderElement = document.getElementById("O_stimOrderSelect");
+
+	// add new generation option
+	//var option=document.createElement("option");
+	//option.text="New Generation";
+	//option.value="New Generation";
+	//genElement.add(option,null);
+	console.log(chain);
+	for(var i=0; i< resultsFiles.length; ++i){
+		// starts with "START" and has no underscores
+//		if(resultsFiles[i].substring(0,5)=='START' & resultsFiles[i].indexOf('_') === -1){
+		if(showAllFilesX | resultsFiles[i].indexOf("_CH"+chain) >= 0 | resultsFiles[i].indexOf("_CH")==-1){
+			var option=document.createElement("option");
+			option.text=resultsFiles[i];
+			option.value=resultsFiles[i];
+			genElement.add(option,null);
+			}
+	//	}
+	}
+	
+	for(var i=0; i< stimOrderresultsFiles.length; ++i){
+		// starts with "START" and has no underscores
+//		if(resultsFiles[i].substring(0,5)=='START' & resultsFiles[i].indexOf('_') === -1){
+		if(showAllFilesX | stimOrderresultsFiles[i].indexOf("_CH"+chain) >= 0 | stimOrderresultsFiles[i].indexOf("_CH")==-1){
+			var option=document.createElement("option");
+			option.text=stimOrderresultsFiles[i];
+			option.value=stimOrderresultsFiles[i];
+			stimOrderElement.add(option,null);
+			}
+	//	}
+	}
+	
+	genElement.selectedIndex = 0;
+	stimOrderElement.selectedIndex = 0;
+	
+}
+
+
+function O_startExperiment(){
+	// check all options have been selected
+	
+	// run experiment
+	
+
+}
+
+// experiment can get values using:
+// function getQueryParams(qs) {
+//     qs = qs.split("+").join(" ");
+// 
+//     var params = {}, tokens,
+//         re = /[?&]?([^=]+)=([^&]*)/g;
+// 
+//     while (tokens = re.exec(qs)) {
+//         params[decodeURIComponent(tokens[1])]
+//             = decodeURIComponent(tokens[2]);
+//     }
+// 
+//     return params;
+// }
+// getQueryParams(document.location.search);
+
+
+function getResultsFiles(){
+
+	     $.ajax({
+			   type: "POST",
+			   url: "Chat/process3.php",
+			   data: {  
+			   			'function': 'get-results-file-list'
+						},
+			   dataType: "json",
+			   success: function(data){
+				   if(data.files){
+				   	// in IntroScreen.html
+						processResultsFiles(data.files);
+				   }
+				   else{
+				   	alert("Cannot load file"+data);
+				   }
+			  },
+		 });
+
+}
+
+function reload(){
+	getResultsFiles();
+}
+
+function showAllFiles(){
+	showAllFilesX = !showAllFilesX;
+	reload();
+}
+
+var showAllFilesX = false;
+getResultsFiles();
+
+
+
+
+
+</script>
+<html>

@@ -1,0 +1,696 @@
+Exper_ExampleLanguage1.lang_CH1-4_22_160327	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_22_160327	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_22_160616	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_22_160616	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_22_160928	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_22_160928	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_22_161423	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_22_161423	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_22_162406	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_22_162406	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_28_115542	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_28_115542	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_28_125722	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_28_125722	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_28_130652	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-4_28_130652	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_11_172925	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_11_172924	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_11_173119	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_11_173119	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH6-5_12_153223	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH6-5_12_153223	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_12_164452	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_12_164452	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_12_164726	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_12_164726	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_12_175339	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_12_175341	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_15_130606	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_15_130346	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_15_130944	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_15_130942	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_15_134126	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_15_134113	Part1	NA	19-40
+
+TestNoise_ExampleLanguage1.lang_CH1-5_19_101545	Part2	NA	19-40
+
+TestNoise_ExampleLanguage1.lang_CH1-5_19_101545	Part1	NA	19-40
+
+TestNoise_ExampleLanguage1.lang_CH1-5_19_101718	Part1	NA	19-40
+
+TestNoise_ExampleLanguage1.lang_CH1-5_19_101718	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_104018	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_104019	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_105915	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_105914	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_131633	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_131631	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_131929	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_131928	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_132048	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_132047	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_132715	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_132713	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_132842	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_132840	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_133040	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_133038	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_133301	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_133300	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_143940	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_143940	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_144233	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_144233	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_144355	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_144355	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_144532	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_144532	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_145835	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_145835	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_150306	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_150308	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_150322	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_150322	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_150738	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_150738	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_151111	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_151111	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_151214	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_151212	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_151221	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_151221	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_151541	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_151541	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_151714	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_151714	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_160910	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_160910	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_161125	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_161125	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_161925	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_161925	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_163009	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_163009	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_163917	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_163917	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_164650	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_164650	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_164802	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_164802	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_164940	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_164940	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_165052	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_165052	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_165257	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_165257	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_171431	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_171431	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_171840	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_171840	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_172605	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_172605	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_172755	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_172755	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_172848	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_172848	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_173258	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_173258	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_173709	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_173709	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_174241	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_174241	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_174339	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_174339	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_174544	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_174544	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_175046	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_175046	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_175333	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_175331	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_175346	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_175346	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_180247	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_180247	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_180401	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_180401	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_180548	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_180548	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_181113	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_181113	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_181346	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_181346	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-5_19_181632	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_120249	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_120249	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_150527	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_150527	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_151602	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_151602	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_152307	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_152307	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_152704	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_152704	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_152806	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_152806	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_153144	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_153144	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_153342	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_153342	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_153615	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_153615	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_153708	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_153708	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_154041	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_154041	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_154140	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_154140	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_154243	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_154243	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_154501	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_154501	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155131	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155131	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155218	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155218	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155343	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155343	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155447	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155559	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155557	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155725	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155725	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155922	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_155922	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_160136	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_160136	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_160820	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_160820	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_161321	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_161321	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_161954	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_161954	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_163355	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_163355	Part1	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_164841	Part2	NA	19-40
+
+TestContext_ExampleLanguage1.lang_CH1-6_9_164841	Part1	NA	19-40
+
+TestContextNoRepair_TestContext_ExampleLanguage1.lang_CH1-6_9_164841.lang_CH1-6_10_090129	Part1	NA	19-40
+
+TestContextNoRepair_TestContext_ExampleLanguage1.lang_CH1-6_9_164841.lang_CH1-6_10_090127	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_141506	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_141501	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_141523	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_141523	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_142009	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_142009	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_142125	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_142125	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_142554	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_142552	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_142618	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_142618	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_143225	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_143225	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_143410	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_143410	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_144151	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_144151	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_144611	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_144611	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_145641	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_145641	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_151002	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_151038	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_151038	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_151240	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_151240	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_151638	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_151638	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_151754	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_151754	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_152306	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_152306	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_153800	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_153800	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_155145	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_11_155145	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_23_092535	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_23_092535	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_24_103043	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_24_103043	Part1	NA	19-40
+
+Pilot_ExampleLanguage1.lang_CH1-6_24_112211	Part2	NA	19-40
+
+Pilot_ExampleLanguage1.lang_CH1-6_24_112211	Part1	NA	19-40
+
+Pilot_ExampleLanguage1.lang_CH1-6_24_113554	Part1	NA	19-40
+
+Pilot_ExampleLanguage1.lang_CH1-6_24_113554	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_24_181112	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_24_181112	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_24_182344	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_24_182344	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_24_182525	Part2	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_24_182525	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_25_085408	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_25_085408	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_25_085501	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_25_085501	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_25_092203	Part1	NA	19-40
+
+Exper_ExampleLanguage1.lang_CH1-6_25_092203	Part2	NA	19-40
+
+run_start1.lang_CH1-6_25_113450	Part1	NA	19-40
+
+run_start1.lang_CH1-6_25_113450	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_28_105308	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_28_105313	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_28_105313	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_28_105335	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_28_105335	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_28_111620	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_28_111617	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_28_111633	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_28_111633	Part2	NA	19-40
+
+Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243	Part1	NA	19-40
+
+Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_29_102237	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_29_102237	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_29_102600	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_29_102600	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_29_112336	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_29_112331	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_30_210024	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_30_210024	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_30_210104	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_30_210104	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_30_210512	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_30_210520	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_30_210520	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_30_211031	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_30_211031	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_30_212117	Part1	NA	19-40
+
+Exper_start1.lang_CH1-6_30_212117	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_30_213604	Part2	NA	19-40
+
+Exper_start1.lang_CH1-6_30_213604	Part1	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_213730	Part1	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_213739	Part2	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_214423	Part1	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_214426	Part2	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_214630	Part2	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_214627	Part1	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_214644	Part1	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_214657	Part2	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_214654	Part1	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_214755	Part1	NA	19-40
+
+Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_214759	Part2	NA	19-40
+
+Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-7_1_103945	Part1	NA	19-40
+
+Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-7_1_103947	Part1	NA	19-40
+
+Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-7_1_104040	Part1	NA	19-40
+
+Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-7_1_104038	Part1	NA	19-40
+
+Exper_start1.lang_CH1-7_1_104606	Part1	NA	19-40
+
+Exper_start1.lang_CH1-7_1_104606	Part2	NA	19-40
+
+Exper_start1.lang_CH1-7_1_112026	Part1	NA	19-40
+
+Exper_start1.lang_CH1-7_1_112026	Part2	NA	19-40
+
+Exper_start1.lang_CH6-7_2_135926	Part1	NA	19-40
+
+Exper_start1.lang_CH6-7_2_135922	Part1	NA	19-40
+
+Exper_start1.lang_CH6-7_2_135940	Part1	NA	19-40
+
+Exper_start1.lang_CH6-7_2_135947	Part2	NA	19-40
+
+Exper_start1.lang_CH6-7_2_140018	Part2	NA	19-40
+
+Exper_start1.lang_CH6-7_2_140018	Part1	NA	19-40
+
+Exper_start1.lang_CH6-7_2_140958	Part1	NA	19-40
+
+Exper_start1.lang_CH6-7_2_140958	Part2	NA	19-40
+
+Exper_Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_213730.lang_CH1-7_3_160526	Part1	NA	19-40
+
+Exper_Exper_Exper_Exper_start1.lang_CH1-6_28_105335.lang_CH1-6_29_092243.lang_CH1-6_30_213730.lang_CH1-7_3_160526	Part2	NA	19-40
+
+Exper_start2.lang_CH2-7_6_100929	Part1	NA	19-40
+
+Exper_start2.lang_CH2-7_6_100929	Part2	NA	19-40
+
+Exper_start2.lang_CH2-7_6_112939	Part1	NA	19-40
+
+Exper_start2.lang_CH2-7_6_112951	Part2	NA	19-40
+
+Exper_Exper_start2.lang_CH2-7_6_100929.lang_CH2-7_6_131730	Part2	NA	19-40
+
+Exper_start1.lang_CH1-7_6_131648	Part1	NA	19-40
+
+Exper_Exper_start2.lang_CH2-7_6_100929.lang_CH2-7_6_131730	Part1	NA	19-40
+
+Exper_start1.lang_CH1-7_6_131648	Part2	NA	19-40
+
+Exper_start1.lang_CH1-7_7_112906	Part1	NA	19-40
+
+Exper_start1.lang_CH1-7_7_112928	Part2	NA	19-40
+
+Exper_Exper_start1.lang_CH1-7_6_131648.lang_CH1-7_8_102009	Part2	NA	19-40
+
+Exper_Exper_start1.lang_CH1-7_6_131648.lang_CH1-7_8_102016	Part1	NA	19-40
+
+Exper_Exper_start1.lang_CH1-7_6_131648.lang_CH1-7_8_102202	Part2	NA	19-40
+
+Exper_Exper_start1.lang_CH1-7_6_131648.lang_CH1-7_8_102202	Part1	NA	19-40
+
+Exper_Exper_start2.lang_CH2-7_6_112939.lang_CH2-7_8_132407	Part2	NA	19-40
+
+Exper_Exper_start2.lang_CH2-7_6_112939.lang_CH2-7_8_132418	Part1	NA	19-40
+
+CH1-7_9_101741	Part2	NA	19-40
+
+CH1-7_9_101741	Part1	NA	19-40
+
+Exper_CH1-7_9_112831	Part2	NA	19-40
+
+Exper_CH1-7_9_112820	Part1	NA	19-40
+
+Exper_CH2-7_13_101550	Part1	NA	19-40
+
+Exper_CH2-7_13_101550	Part2	NA	19-40
+
+Exper_CH2-7_14_112950	Part2	NA	19-40
+
+Exper_CH2-7_14_112950	Part1	NA	19-40
+
+Exper_CH2-7_14_121501	Part1	NA	19-40
+
+Exper_CH2-7_14_121520	Part1	NA	19-40
+
+Exper_CH2-7_14_121520	Part2	NA	19-40
+
+Exper_CH2-7_14_121520	Part2	NA	19-40
+
+Exper_CH2-7_16_130541	Part2	NA	19-40
+
+Exper_CH2-7_16_130557	Part1	NA	19-40
+
+Exper_CH2-7_17_114919	Part1	NA	19-40
+
+Exper_CH2-7_17_114919	Part2	NA	19-40
+
+Exper_CH2-7_17_141443	Part2	NA	19-40
+
+Exper_CH2-7_17_141505	Part1	NA	19-40
+
+Exper_CH1-2_19_143243	Part1	NA	19-40
+
+Exper_CH1-2_19_143243	Part2	NA	19-40
+

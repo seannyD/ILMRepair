@@ -1,0 +1,148 @@
+*                               { margin: 0; padding: 0; }
+body                            { font: 12px "Lucida Grande", Sans-Serif; overflow:hidden; max-height:100%; max-width: 100%;}
+h2                              { color: #fa9f00; font: 30px Helvetica, Sans-Serif; margin: 0 0 10px 0; }
+#page-wrap                      { width: 500px; margin: 30px auto; position: relative; }
+
+#chat-wrap                      { border: 1px solid #eee; margin: 0 0 15px 0; }
+#chat-area                      { height: 300px; overflow: auto; border: 1px solid #666; padding: 20px; background: white; }
+#chat-area span                 { color: white; background: #333; padding: 4px 8px; -moz-border-radius: 5px; -webkit-border-radius: 8px; margin: 0 5px 0 0; }
+#chat-area p                    { padding: 8px 0; border-bottom: 1px solid #ccc; }
+
+#name-area                      { position: absolute; top: 12px; right: 0; color: white; font: bold 12px "Lucida Grande", Sans-Serif; text-align: right; }   
+#name-area span                 { color: #fa9f00; }
+
+#send-message-area p            { float: left; color: white; padding-top: 27px; font-size: 14px; }
+#sendie                         {position: relative; border: 3px solid #999; font: 40px "Lucida Grande", Sans-Serif; text-align:center; width: 100%; height:100%;}
+
+#leftStim						{position: absolute; left: 666px; top: 490px; width: 840px; height: 384px; z-index: -1;}
+#leftStimImage					{src: ""; max-width:100%; max-height:100%;  left: 200px; position: relative; z-index: -1;}
+#middleStim						{position: absolute; left: 666px; top: 878px; width:840px; height:320px; font: 50px "Lucida Grande", Sans-Serif; text-align:center; z-index: -1;}
+
+#middleStimTextExper			{position: absolute; left: 464px; top: 0px; width: 430px; height: 200px; font: 50px "Lucida Grande", Sans-Serif; text-align:center; z-index: 10;}
+
+#leftStimTest					{position: absolute; left: 666px; top: 490px; width: 840px; height: 384px; border:2px solid;}
+#leftStimTestImage				{src: ""; max-width:auto; max-height:100%; left: 200px; position: relative; }
+#typedInput						{position: absolute; left: 716px; top: 900px; width:740px; height:120px; font: 46px "Lucida Grande", Sans-Serif; text-align:center; border:2px solid;}
+
+
+
+#typedInputSurround				{position: absolute; left: 666px; top: 878px; width:840px; height:320px; z-index: -1;}
+
+#AddToNotebook					{position: absolute; left: 666px; top: 878px; width:840px; height:320px;}
+#AddToNotebookTitle				{font: 30px "Lucida Grande", Sans-Serif; text-align:center; }
+#AddToNotebookYes				{position: relative; top: 20%; left: 5%; width: 300px; height: 100px; font: 20px "Lucida Grande", Sans-Serif;}
+#AddToNotebookNo				{position: relative; top: 20%; left: 20%; width: 300px; height: 100px; font: 20px "Lucida Grande", Sans-Serif;}
+
+#middleStimTest					{position: absolute; left: 1520px; top: 120px; width:380px; height:120px; font: 30px "Lucida Grande", Sans-Serif; text-align:center; vertical-align: middle; color:red;}
+
+#feedbackPanel					{position: absolute; left: 670px; top: 520px; width:830px; height:384px;margin:0;padding:0;}
+#feedbackPanelInner				{position: relative;}
+#feedbackPanelImage				{position: relative; left: 5%; top: 30%; max-height: 30%; max-width: 20%; src: ""; margin:0;padding:0;}
+
+#feedbackYouChose				{float:left; width:30%; height:100%;margin:0;padding:5%;}
+#feedbackYouChoseText			{width:100%; height:20%; top: 0%; position: relative; font: 30px "Lucida Grande", Sans-Serif;margin:0;padding:0;}
+#feedbackYouChoseImage			{src: ""; max-width:80%; max-height:80%; position: relative;margin:0;padding:0; }
+
+#feedbackTheyChose				{float:right; width:30%; height:100%; margin:0;padding:5%;}
+#feedbackTheyChoseText			{width:100%; height:20%; top: 0%;  position: relative; font: 30px "Lucida Grande", Sans-Serif;margin:0;padding:0;}
+#feedbackTheyChoseImage			{src: ""; max-width:80%; max-height:80%; position: relative; margin:0;padding:0;}
+
+#cont							{position: absolute; left: 666px; top: 0px; width: 840px; height: 487px; border:2px solid;}
+#cont1							{position: relative; src:""; max-height: 240px; border: 0;}
+#cont2							{position: relative; src:""; max-height: 240px;  border: 0;}
+#cont3							{position: relative; src:""; max-height: 240px;  border: 0;}
+#cont4							{position: relative; src:""; max-height: 240px;  border: 0;}
+#cont5							{position: relative; src:""; max-height: 240px;  border: 0;}
+#cont6							{position: relative; src:""; max-height: 240px;  border: 0;}
+
+#rightStimTest					{position: absolute; left: 761px; top: 31px; width:182px; height: 132px;}
+#rightStimTestImage				{src: ""; max-width:100%; max-height:100%;}
+
+#backgroundImage				{position: absolute; left:0px; top:0px; width: 1024px; height: 550px; z-index:-2}
+
+#StartButton					{position: absolute; left: 1526px; top: 400px; width: 380px; height: 75px; font: 30px "Lucida Grande", Sans-Serif; border: 1px solid #eee; background-color: red; text-align:center; vertical-align: middle; z-index: 2;}
+
+#ScorePanel						{position: absolute; left:1508px; top:1124px; width:416px; height:73px; font: 20px "Lucida Grande", Sans-Serif; border:2px solid;}
+
+#InfoPanel						{position: absolute; left:1508px; top:86px; width:419px ;height:1032px; font: 20px "Lucida Grande", Sans-Serif; text-align:center; z-index: -1; border:2px solid;}
+
+#SlideWhistle					{position: absolute; top: 344px; left: 0px; height: 203px; width: 1024px; text-align: center; }
+
+#PlayPartnerSignal				{position: absolute; top: 217px; left: 760px; width: 87px; height: 82px;}
+
+#playPartnerSignalButton		{position: relative; width:95%;  border: 0;}
+
+#sendButtonDiv					{position: absolute; top: 194px; left: 653px; width: 166px; height:116px;}
+
+#sendButton						{position: relative; width:95%;  border: 0;}
+
+#retryButton					{position: absolute; top: 194px; left: 507px; width: 126px; height:116px;}
+
+#NextInst						{background-color: green; position: absolute; left: 810px; top: 10px; width: 200px; height:75px; font-size: 28px; vertical-align: middle;}
+#PrevInst						{background-color: green; position: absolute; left: 750px; top: 95px; width: 200px; height:75px; font-size: 28px;}
+
+#instructions					{font-size: 20px; position: absolute; left:10px; top:10px; width: 600px; height: 100px}
+
+#instructionsTitle				{font-size: 20px; position: absolute; left:1506px; top:20px; width: 416px; height: 82px}
+
+#SynchButton					{background-color: orange; position: absolute; top: 40%, left: 30%; width=40%; height: 30%; z-index:3}
+
+#timerCanvasDiv					{position: absolute; top: 10px; left: 850px; width:125px; height: 125px; z-index:-1}
+
+#AcceptAndProceedDiv			{position: absolute; top: 50%; left: 40%; height:200px; width:500px; z-index: 2}
+#askExperimentorButton			{font-size:30px;}
+#AgreeButton					{font-size:30px;}
+
+#dictionaryPanel				{position: absolute; left:0px; top:86px; width:663px ;height:1110px; border:2px solid;}
+#leftDictCol					{position: relative; top: 0%; width:45%; height:95%;float: left;}
+#rightDictCol					{position: relative; top: 0%; width:45%; height:95%;float: right;}
+#d1								{position: relative; width:100%; height:12.5%;}
+#d2								{position: relative; width:100%; height:12.5%;}
+#d3								{position: relative; width:100%; height:12.5%;}
+#d4								{position: relative; width:100%; height:12.5%;}
+#d5								{position: relative; width:100%; height:12.5%;}
+#d6								{position: relative; width:100%; height:12.5%;}
+#d7								{position: relative; width:100%; height:12.5%;}
+#d8								{position: relative; width:100%; height:12.5%;}
+#d9								{position: relative; width:100%; height:12.5%;}
+#d10							{position: relative; width:100%; height:12.5%;}
+#d11							{position: relative; width:100%; height:12.5%;}
+#d12							{position: relative; width:100%; height:12.5%;}
+#d13							{position: relative; width:100%; height:12.5%;}
+#d14							{position: relative; width:100%; height:12.5%;}
+#d15							{position: relative; width:100%; height:12.5%;}
+#d16							{position: relative; width:100%; height:12.5%;}
+
+#d1text							{position: relative; top: 30%; width: 55%; float:right; font: 20px "Lucida Grande", Sans-Serif;}
+#d2text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d3text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d4text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d5text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d6text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d7text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d8text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d9text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d10text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d11text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d12text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d13text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d14text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d15text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+#d16text							{position: relative; top: 30%; width: 55%; float:right;font: 20px "Lucida Grande", Sans-Serif;}
+
+#d1Image						{max-height:100%; max-width:40%;}
+#d2Image						{max-height:100%; max-width:40%;}
+#d3Image						{max-height:100%; max-width:40%;}
+#d4Image						{max-height:100%; max-width:40%;}
+#d5Image						{max-height:100%; max-width:40%;}
+#d6Image						{max-height:100%; max-width:40%;}
+#d7Image						{max-height:100%; max-width:40%;}
+#d8Image						{max-height:100%; max-width:40%;}
+#d9Image						{max-height:100%; max-width:40%;}
+#d10Image						{max-height:100%; max-width:40%;}
+#d11Image						{max-height:100%; max-width:40%;}
+#d12Image						{max-height:100%; max-width:40%;}
+#d13Image						{max-height:100%; max-width:40%;}
+#d14Image						{max-height:100%; max-width:40%;}
+#d15Image						{max-height:100%; max-width:40%;}
+#d16Image						{max-height:100%; max-width:40%;}

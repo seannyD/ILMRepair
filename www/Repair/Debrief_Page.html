@@ -1,0 +1,46 @@
+﻿<html>
+
+<body>
+
+<div id="thankstext" style="font-size: 40; position: absolute; top: 30px; left: 50px; width: 800px; height: 200px">
+</div>
+
+
+
+</body>
+
+
+<script type="text/javascript">
+
+
+//		var thank_you_text = "Thanks for doing the experiment!";
+
+		var thank_you_text = "You have finished the test! <br /> Please ask the investigator for further instructions.";
+			
+   		function getQueryParams(qs) {
+				qs = qs.split("+").join(" ");
+			
+				var params = {}, tokens,
+					re = /[?&]?([^=]+)=([^&]*)/g;
+			
+				while (tokens = re.exec(qs)) {
+					params[decodeURIComponent(tokens[1])]
+						= decodeURIComponent(tokens[2]);
+				}
+			
+				return params;
+			}
+			
+	var experParams = getQueryParams(document.location.search);
+	var score = experParams["score"];
+	
+	var ttext = thank_you_text;
+	if(score.length>0){
+		ttext = "Your final score is " + score + "!" + "<br />"+thank_you_text;
+	}
+
+	document.getElementById("thankstext").innerHTML = ttext;
+	
+</script>
+
+</html>
